@@ -4,6 +4,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
@@ -25,6 +26,8 @@ public class SlidingDrawerDemo extends AppCompatActivity {
     imbg=(ImageButton)findViewById(R.id.handle);
         mDrawer=(WrappingSlidingDrawer)findViewById(R.id.slidingdrawer);
         tv=(TextView)findViewById(R.id.tv);
+
+
 
         mDrawer.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener()
         {
@@ -58,6 +61,15 @@ public class SlidingDrawerDemo extends AppCompatActivity {
                 tv.setText("开始拖动");
             }
 
+        });
+        tv.setOnClickListener(new View.OnClickListener()
+        {
+
+            @Override
+            public void onClick(View v) {
+                mDrawer.animateClose();
+              //  mDrawer.close();
+            }
         });
 
     }
