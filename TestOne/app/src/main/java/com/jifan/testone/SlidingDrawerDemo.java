@@ -7,10 +7,9 @@ import android.os.Bundle;
 import android.widget.ImageButton;
 import android.widget.SlidingDrawer;
 import android.widget.TextView;
-
 public class SlidingDrawerDemo extends AppCompatActivity {
 
-    private SlidingDrawer mDrawer;
+    private WrappingSlidingDrawer mDrawer;
     private ImageButton imbg;
     private Boolean flag=false;
     private TextView tv;
@@ -23,8 +22,8 @@ public class SlidingDrawerDemo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_sliding_drawer_demo);
 
-        imbg=(ImageButton)findViewById(R.id.handle);
-        mDrawer=(SlidingDrawer)findViewById(R.id.slidingdrawer);
+    imbg=(ImageButton)findViewById(R.id.handle);
+        mDrawer=(WrappingSlidingDrawer)findViewById(R.id.slidingdrawer);
         tv=(TextView)findViewById(R.id.tv);
 
         mDrawer.setOnDrawerOpenListener(new SlidingDrawer.OnDrawerOpenListener()
@@ -60,7 +59,6 @@ public class SlidingDrawerDemo extends AppCompatActivity {
             }
 
         });
-
 
     }
 
